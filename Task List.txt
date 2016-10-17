@@ -1,0 +1,53 @@
+
+
+Stage 1 functions:
+1.  matrix(int rows, int cols) 
+2.  matrix(initializer_list<vector<T>> lst) : arr(lst.size())
+3.  int numrows() const;
+4.  int numcols() const;
+5.  const matrix<T> & operator=(const matrix<T> & rhs);
+6.  matrix<T> zeroes(int rows, int cols);
+7.  matrix<T> ones(int rows, int cols);
+8.  vector<T> row(int k) const;
+9.  vector<T> col(int k) const;
+10. matrix<T> deleteRow(int k) const;
+11. matrix<T> deleteCol(int k) const;
+12. matrix<T> eye(int n);
+13. T dot(const vector<T> &lvec, const vector<T> &rvec);
+
+Stage 2 functions:
+1. const matrix<T> operator+=(const matrix<T> & rhs);
+2. const matrix<T> operator+(const matrix<T> & rhs) const;
+3. const matrix<T> operator*=(const T &c);
+4. const matrix<T> operator*(const T &c); 
+5. matrix<T> t() const;
+6. const matrix<T> operator*(const matrix<T> & rhs) const;
+7. T det(); w/ T det_aux();
+
+Function assignments:
+
+-STAGE 1-
+Finish by October 23rd???
+Jonathon:
+1. matrix(int rows, int cols) 
+2. matrix(initializer_list<vector<T>> lst) : arr(lst.size())
+3. const matrix<T> & operator=(const matrix<T> & rhs);
+4. matrix<T> deleteRow(int k) const;
+5. vector<T> row(int k) const;
+6. T dot(const vector<T> &lvec, const vector<T> &rvec);
+
+Andrew:
+1. int numrows() const;
+2. int numcols() const;
+3. matrix<T> zeroes(int rows, int cols);
+4. matrix<T> ones(int rows, int cols);
+5. vector<T> col(int k) const;
+6. matrix<T> deleteCol(int k) const;
+7. matrix<T> eye(int n);
+
+-STAGE 2-
+Finish by November 2nd???
+Jonathon:
+
+
+Andrew:
