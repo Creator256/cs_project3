@@ -14,13 +14,23 @@ public:
 	// constructs rows x cols  matrix-of-int T.
 	matrix(int rows, int cols)  
 	{
-		 // You write code
+		arr = vector<vector<T>>(rows); //Create buckets to fill
+		int i;
+		for (i = 0; i < rows; i++) {
+			arr[i] = vector<T>(cols);
+		}
 	}
 
 	//constructs an (nxm) matrix, determined by the number of elements in the initializer list { {...} ...{...}}
 	matrix(initializer_list<vector<T>> lst) : arr(lst.size())
 	{
-		 // You write code
+		auto itr = lst.begin();
+		unsigned index = 0;
+		while (itr != lst.end()) {
+			arr[index] = *itr;
+			itr++;
+			index++;
+		}
 	}
 
 	//Copy constructor(L - Ref parameter)
@@ -44,13 +54,18 @@ public:
 
 	int numrows() const
 	{  
-		// You write code
-		return 0;  //dummy value
+		return arr.size();
 	}
 	int numcols() const
 	{
-		// You write code
-		return 0;  //dummy value
+		if (arr.size() > 0) {
+			//Assuming all rows have the same size
+			//(Columns)
+			arr[0].size();
+		}
+		else {
+			return 0;
+		}
 	}
 
 	matrix<T> t() const; //returns a new matrix that is the transpose of *this

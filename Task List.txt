@@ -29,16 +29,16 @@ Function assignments:
 -STAGE 1-
 Finish by October 23rd???
 Jonathon:
-1. matrix(int rows, int cols) 
-2. matrix(initializer_list<vector<T>> lst) : arr(lst.size())
-3. const matrix<T> & operator=(const matrix<T> & rhs);
-4. matrix<T> deleteRow(int k) const;
-5. vector<T> row(int k) const;
-6. T dot(const vector<T> &lvec, const vector<T> &rvec);
+1. matrix(int rows, int cols) *Made but untested
+2. matrix(initializer_list<vector<T>> lst) : arr(lst.size()) *Made but untested
+3. const matrix<T> & operator=(const matrix<T> & rhs); *Made but untested
+4. matrix<T> deleteRow(int k) const; *Made but untested
+5. vector<T> row(int k) const; *Made but untested
+6. T dot(const vector<T> &lvec, const vector<T> &rvec); *Made but untested
 
 Andrew:
-1. int numrows() const;
-2. int numcols() const;
+1. int numrows() const; *Finished for printing 
+2. int numcols() const; *Finished for printing 
 3. matrix<T> zeroes(int rows, int cols);
 4. matrix<T> ones(int rows, int cols);
 5. vector<T> col(int k) const;

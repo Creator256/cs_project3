@@ -19,8 +19,14 @@ template <typename T>
 const matrix<T> & matrix<T>::operator=(const matrix<T> & rhs)
 {
 	assert(this->numrows() == rhs.numrows() && this->numcols() == rhs.numcols());
-	// You write code
-	return matrix<T>(1, 1); //dummy return statement needs to be replaced
+	int i, j; //row, column 
+	//Don't need to make a copy since they aren't stepping on each other
+	for (i = 0; i < numrows(); i++) {
+		for (j = 0; j < numcols(); j++) {
+			arr[i][j] = rhs.arr[i][j];
+		}
+	}
+	return *this;
 }
 
 template<typename T>
@@ -60,8 +66,7 @@ const matrix<T> matrix<T>::operator* (const matrix<T> & rhs)const {
 
 template<typename T>
 vector<T> matrix<T>::row(int k) const {
-	// You write code
-	return vector<T>(); //dummy return
+	return arr[k];
 }
 
 template<typename T>
@@ -72,8 +77,17 @@ vector<T> matrix<T>::col(int k) const {
 
 template<typename T>
 matrix<T> matrix<T>::deleteRow(int k) const {
-	// You write code
-	return matrix<T>(); //dummy return
+	matrix<T> copy(numrows()-1, numcols()); //0 matrix
+	int i = 0, copyI = 0;
+	//Skipped copying the deleted row to the copy
+	while (i < numrows() ) {
+		if (i != k) {
+			copy[copyI] = arr[i];
+			copyI++;
+		}
+		i++;
+	}
+	return copy;
 }
 
 template<typename T>
@@ -150,8 +164,13 @@ ostream& operator<<(ostream & out, const  matrix<T> & rhs) {
 
 template<typename T>
 T dot(const vector<T> & lvec, const vector<T> & rvec) {
-	// You write code
-	return T(); //dummy return
+	assert(lvec.size() == rvec.size());
+	unsigned i;
+	T dot = 0;
+	for (i = 0; i < lvec.size(); i++) {
+		dot += lvec[i] * rvec[i];
+	}
+	return dot;
 }
 template<typename T>
 matrix<T> eye(int n) {
